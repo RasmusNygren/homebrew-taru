@@ -1,7 +1,7 @@
 # Documentation: https://docs.brew.sh/Formula-Cookbook
 #                https://rubydoc.brew.sh/Formula
 # PLEASE REMOVE ALL GENERATED COMMENTS BEFORE SUBMITTING YOUR PULL REQUEST!
-class TaruBin < Formula
+class Taru < Formula
   version "v0.2.0"
   desc "Taru is a local-first workflow-runner for unix-based systems"
   homepage "https://github.com/rasmusNygren/taru"
@@ -12,6 +12,7 @@ class TaruBin < Formula
   depends_on "rust" => :build
 
   def install
+    system "cargo", "install", "--features", "pcre2", *std_cargo_args
     bin.install "taru"
   end
 end
