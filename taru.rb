@@ -9,10 +9,7 @@ class Taru < Formula
   sha256 "18364048b1157b05547bd264f5d296ae657384f42d10bddf84e7f25d3d15bfcb"
   license "MIT"
 
-  depends_on "rust" => :build
-
   def install
-    system "cargo", "install", "--features", "pcre2", *std_cargo_args
     bin.install "taru"
   end
 end
